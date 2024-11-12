@@ -198,7 +198,6 @@
           - debian:buster
           - debian:bullseye
           - debian:bookworm
-          - amazonlinux:2
     builders:
     - trigger-builds:
       - project: percona-server-5.7-pipeline
