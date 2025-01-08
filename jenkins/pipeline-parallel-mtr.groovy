@@ -927,6 +927,7 @@ pipeline {
         always {
 	    script {
                     def fullName = currentBuild.getBuildCauses()[0].shortDescription
+                    currentBuild.description = "Job: " + currentBuild.currentResult + " SlackChannel: ${env.SLACK_CHANNEL} ${fullName}"
                     notifySlack(currentBuild.currentResult, '#36a64f', "[{jobName}] started by {userId} ({email} / <@{slackUserId}>).")
             }
             triggerAbortedTestWorkersRerun()
